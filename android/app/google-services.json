@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309958273904",
+    "project_id": "volunterstage",
+    "storage_bucket": "volunterstage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309958273904:android:24f906e857db03ceb33db5",
+        "android_client_info": {
+          "package_name": "com.example.volunteerstage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309958273904-ip08llf3uh29d5l3kvjpf4gsiiutv9tt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqk0XdLiI-33W-xcbkZgVZwFQcfwvlRLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309958273904-ip08llf3uh29d5l3kvjpf4gsiiutv9tt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
