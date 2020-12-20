@@ -1,9 +1,57 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:splashscreen/splashscreen.dart';
+import 'package:volunteerstage/Model/Application.dart';
+import 'package:volunteerstage/Model/Field.dart';
+import 'package:volunteerstage/Model/Location.dart';
+import 'package:volunteerstage/Model/NGO.dart';
+import 'package:volunteerstage/Model/Volunteer.dart';
+import 'package:volunteerstage/Service/ApplicationService.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(new MaterialApp(
+    home: Start(),
+  ));
 }
+
+class Start extends StatefulWidget {
+  @override
+  _StartState createState() => _StartState();
+}
+
+class _StartState extends State<Start> {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(seconds: 2,
+      navigateAfterSeconds: FutureBuilder(
+        // Initialize FlutterFire
+        future: Firebase.initializeApp(),
+        builder: (context, snapshot) {
+          // Check for errors
+          if (snapshot.hasError) {
+            return Text('Connection Error');
+          }
+          // Once complete, show your application
+          if (snapshot.connectionState == ConnectionState.done){
+            return MyApp();
+          }
+          // Otherwise, show something whilst waiting for initialization to complete
+          return null;
+        },
+      ),
+      title: Text('Volunteer Stage',style: TextStyle(
+          color: Colors.black,
+          fontSize: 25,
+          fontWeight: FontWeight.bold
+      ),),
+
+      backgroundColor: Colors.white,
+      photoSize: 100,
+    );
+  }
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -63,7 +111,8 @@ class MyApp extends StatelessWidget {
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
                             width:500,color: Colors.red.shade200,
-                            child: FlatButton(child: Text('Volunteer',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),),),
+                            child: FlatButton(child: Text('Volunteer',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
+                            },),),
                         ),),
                       Expanded(flex: 1,child: Padding(
                         padding: const EdgeInsets.all(20.0),
@@ -79,4 +128,5 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
 }
