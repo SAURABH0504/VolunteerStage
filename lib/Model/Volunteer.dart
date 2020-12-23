@@ -1,14 +1,13 @@
-class Volunteer{
-
+class Volunteer {
   String volunteerId;
   String name;
   String age;
   String email;
   String occupation;
-  String address;
-  String imageUrl;
+  String contactNumber;
+  String password;
 
-  Volunteer({this.name, this.age, this.email, this.occupation, this.address,this.imageUrl,this.volunteerId});
+  Volunteer({this.contactNumber,this.name, this.age, this.email, this.occupation, this.password,this.volunteerId});
 
   Map<String,dynamic> toMap(){
     return {
@@ -17,8 +16,8 @@ class Volunteer{
       'age':age,
       'email':email,
       'occupation':occupation,
-      'address':address,
-      'imageUrl':imageUrl
+      'password':password,
+      'contactNumber':contactNumber
     };
   }
 
@@ -28,6 +27,6 @@ class Volunteer{
         age = firestore['age'],
         email = firestore['email'],
         occupation = firestore['occupation'],
-        address = firestore['address'],
-        imageUrl = firestore['imageUrl'];
+        password = firestore['password'],
+        contactNumber = firestore['contactNumber'];
 }

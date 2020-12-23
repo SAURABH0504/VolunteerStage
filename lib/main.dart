@@ -7,7 +7,10 @@ import 'package:volunteerstage/Model/Field.dart';
 import 'package:volunteerstage/Model/Location.dart';
 import 'package:volunteerstage/Model/NGO.dart';
 import 'package:volunteerstage/Model/Volunteer.dart';
+import 'package:volunteerstage/NGOScreen/NLogin.dart';
 import 'package:volunteerstage/Service/ApplicationService.dart';
+import 'package:volunteerstage/VolunteerScreen/VLogin.dart';
+import 'package:volunteerstage/VolunteerScreen/ViewNGO.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -23,7 +26,7 @@ class Start extends StatefulWidget {
 class _StartState extends State<Start> {
   @override
   Widget build(BuildContext context) {
-    return SplashScreen(seconds: 2,
+    return SplashScreen(seconds: 5,
       navigateAfterSeconds: FutureBuilder(
         // Initialize FlutterFire
         future: Firebase.initializeApp(),
@@ -112,11 +115,14 @@ class MyApp extends StatelessWidget {
                           child: Container(
                             width:500,color: Colors.red.shade200,
                             child: FlatButton(child: Text('Volunteer',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>VLogin()));
                             },),),
                         ),),
                       Expanded(flex: 1,child: Padding(
                         padding: const EdgeInsets.all(20.0),
-                        child: Container(width:500,color: Colors.blue.shade100,child: FlatButton(child: Text('NGO',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),)),
+                        child: Container(width:500,color: Colors.blue.shade100,child: FlatButton(child: Text('NGO',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (_)=>NLogin()));
+                        },)),
                       ),),
                     ],
                   ),

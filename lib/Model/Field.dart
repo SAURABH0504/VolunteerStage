@@ -1,6 +1,5 @@
 class Field{
   String fieldName;
-
   Field({this.fieldName});
 
   Map<String,dynamic> toMap(){
