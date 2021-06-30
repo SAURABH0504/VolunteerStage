@@ -36,10 +36,10 @@ class _NLoginState extends State<NLogin> {
   }
   Widget _getNGOId() {
     return TextFormField(
-      decoration: InputDecoration(labelText: 'NGO ID'),
+      decoration: InputDecoration(labelText: 'Company ID'),
       validator: (String value) {
         if (value.isEmpty) {
-          return 'NGO ID is Required';
+          return 'Company ID is Required';
         }
         return null;
       },
@@ -92,7 +92,7 @@ class _NLoginState extends State<NLogin> {
                   Text('or'),
                   FlatButton(onPressed: (){
                     Navigator.of(context).push(MaterialPageRoute(builder: (context)=>NGORegister()));
-                  }, child: Text('Register NGO',style: TextStyle(fontSize: 20),))
+                  }, child: Text('Register Company',style: TextStyle(fontSize: 20),))
                 ],
               ),
             ),

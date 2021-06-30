@@ -43,7 +43,7 @@ class _StartState extends State<Start> {
           return null;
         },
       ),
-      title: Text('Volunteer Stage',style: TextStyle(
+      title: Text('Worker Helper',style: TextStyle(
           color: Colors.black,
           fontSize: 25,
           fontWeight: FontWeight.bold
@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Center(child: Text('Volunteer Stage')),backgroundColor: Colors.grey,),
+        appBar: AppBar(title: Center(child: Text('Worker Helper')),backgroundColor: Colors.grey,),
         backgroundColor: Colors.white,
         body: Container(
           child: Column(
@@ -107,20 +107,20 @@ class MyApp extends StatelessWidget {
                   padding: const EdgeInsets.all(0.0),
                   child: Column(
                     children: [
-                      Expanded(child: Text('Are you a ?',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)),
+                      Expanded(child: Text('Do you want to?',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),)),
                       Expanded(
                         flex: 1,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Container(
                             width:500,color: Colors.red.shade200,
-                            child: FlatButton(child: Text('Volunteer',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
+                            child: FlatButton(child: Text('Get a job',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
                               Navigator.of(context).push(MaterialPageRoute(builder: (_)=>VLogin()));
                             },),),
                         ),),
                       Expanded(flex: 1,child: Padding(
                         padding: const EdgeInsets.all(20.0),
-                        child: Container(width:500,color: Colors.blue.shade100,child: FlatButton(child: Text('NGO',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
+                        child: Container(width:500,color: Colors.blue.shade100,child: FlatButton(child: Text('Hire worker',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),onPressed: (){
                           Navigator.of(context).push(MaterialPageRoute(builder: (_)=>NLogin()));
                         },)),
                       ),),
